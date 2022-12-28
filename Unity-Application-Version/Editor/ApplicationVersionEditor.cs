@@ -34,7 +34,7 @@ namespace Artees.AppVersion.Editor
                 new Field<string>("Application version",
                     PlayerSettings.bundleVersion,
                     semVer,
-                    () => PlayerSettings.bundleVersion = semVer.Core),
+                    () => PlayerSettings.bundleVersion = semVer.CoreExtended),
                 new Field<string>("Mac build (CFBundleVersion)",
                     PlayerSettings.macOS.buildNumber,
                     semVer.Core,

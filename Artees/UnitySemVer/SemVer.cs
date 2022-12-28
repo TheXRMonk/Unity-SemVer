@@ -114,6 +114,8 @@ namespace Artees.UnitySemVer
         /// <returns>Major.Minor.Patch</returns>
         public string Core => $"{major}.{minor}.{patch}";
 
+        public string CoreExtended => $"{Core}{PreReleasePrefix}{preRelease}";
+
         /// <summary>
         /// An internal version number. This number is used only to determine whether one version is more recent than
         /// another, with higher numbers indicating more recent versions.
