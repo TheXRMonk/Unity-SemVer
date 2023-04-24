@@ -38,12 +38,15 @@ namespace Artees.AppVersion
                 (version.autoBuild != SemVerAutoBuild.Type.Manual || version != new SemVer())) return;
             version = SemVer.Parse(Application.version);
             
+#if UNITY_EDITOR
             if (BuildVersionInAppName)
                 PlayerSettings.productName = ApplicationName + GetSanitizedVersion();
             else
                 PlayerSettings.productName = ApplicationName;
+#endif
         }
 
+#if UNITY_EDITOR
         private void OnValidate()
         {
             if (BuildVersionInAppName)
@@ -51,5 +54,6 @@ namespace Artees.AppVersion
             else
                 PlayerSettings.productName = ApplicationName;
         }
+#endif
     }
 }
